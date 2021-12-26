@@ -13,7 +13,8 @@
 
 
 ## 설치
-KlipA2AUnity_x.x.x.unitypackage 를 다운받아서 import하면 바로 사용가능합니다.
+[KlipA2AUnity_0.0.1.unitypackage Download](https://github.com/lancekun/Klip-A2A-SDK-Unity/releases/download/0.0.1/KlipA2AUnity_0.0.1.unitypackage)
+KlipA2AUnity_0.0.1.unitypackage 를 다운받아서 import하면 바로 사용가능합니다.
 데모가 필요 없는 분들은 A2A-SDK폴더의 Demo만 제외하고 Import하시면 됩니다.
 
 
@@ -25,6 +26,7 @@ KlipA2AUnity_x.x.x.unitypackage 를 다운받아서 import하면 바로 사용�
 - 한번의 클릭으로 클립 지갑과 연결하는 예제
 - 플랫폼 서포트를 체크하는 예제
 - ...클레이튼,토큰 전송이나 카드 전송 예제는 Klip Partners만 가능해서 제작은 안했으나, SDK를 이용해 충분히 구현이 가능합니다.
+[Demo APK Download](https://github.com/lancekun/Klip-A2A-SDK-Unity/releases/download/0.0.1/KlipA2AUnityDemo_0.0.1.apk)
 ![klipa2ademo_sample](https://user-images.githubusercontent.com/10954717/147196051-844fe365-ecb3-4a09-a281-8b9e043d7865.png)
 
 ## 딥링크 설정 방법
