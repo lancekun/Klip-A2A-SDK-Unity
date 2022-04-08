@@ -104,9 +104,32 @@ public class Klip
 #if UNITY_EDITOR
         Debug.LogWarning("Deep link doesn't work on Unity Editor. deelLinkUrl : " + deelinkUrl );
 #endif   
+        
+#if UNITY_ANDROID
+        OpenAndroidDeepLink(deelinkUrl);
+#elif UNITY_IOS || UNITY_IPHONE
         Application.OpenURL(deelinkUrl);
+#endif
     }
+    
+#if UNITY_ANDROID
+    void OpenAndroidDeepLink(string deelinkUrl)
+    {
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+        AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
+        AndroidJavaObject uriData = uriClass.CallStatic<AndroidJavaObject>("parse", deelinkUrl);
 
+        AndroidJavaObject i = new AndroidJavaObject("android.content.Intent");
+
+        i.Call<AndroidJavaObject>("setAction", "android.intent.action.VIEW");
+        i.Call<AndroidJavaObject>("setData", uriData);
+
+        currentActivity.Call("startActivity", i);
+    }
+#endif
+    
+    
     /**
      * Klip 요청에 대한 실행 결과 데이터를 가져온다.
      * @param requestKey 요청 키
